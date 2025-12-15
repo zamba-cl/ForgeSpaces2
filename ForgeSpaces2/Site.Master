@@ -1,0 +1,105 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="ForgeSpaces2.SiteMaster" %>
+
+<!DOCTYPE html>
+<html lang="pt">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title></title>
+
+    <link rel="stylesheet" href="<%= ResolveUrl("~/Bootstrap/css/bootstrap.css") %>" />
+
+    <asp:ContentPlaceHolder ID="head" runat="server"></asp:ContentPlaceHolder>
+</head>
+
+<body class="d-flex flex-column min-vh-100">
+
+    <form id="form1" runat="server" enctype="multipart/form-data" class="flex-grow-1 d-flex flex-column">
+
+        <header>
+            <nav class="navbar navbar-expand-sm" style="background-color: #010126;">
+                <div class="container-fluid">
+
+                    <a class="navbar-brand" href="FrmInicio.aspx">
+                        <img src="<%= ResolveUrl("~/Images/logoBrancaForgeSpaces.png") %>"
+                            style="height: 60px;" />
+                    </a>
+
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#mainNav">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div id="mainNav" class="collapse navbar-collapse">
+                        <ul class="navbar-nav ms-auto">
+                            <li class="nav-item">
+                                <a class="nav-link text-light" href="FrmInicio.aspx">Início</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-light" href="FrmEspacos.aspx">Espaços</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-light" href="#" data-bs-toggle="offcanvas" data-bs-target="#menuPerfil">Perfil
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </nav>
+        </header>
+
+        <main class="container py-4 flex-grow-1">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server"></asp:ContentPlaceHolder>
+        </main>
+
+        <footer class="text-white mt-auto" style="background-color: #010126;">
+            <div class="container py-3 text-center">
+                &copy; 2025 - ForgeSpaces
+            </div>
+        </footer>
+
+    </form>
+
+    <script src="<%= ResolveUrl("~/Bootstrap/js/bootstrap.js") %>"></script>
+    <script src="<%= ResolveUrl("~/lib/jquery/dist/jquery.min.js") %>"></script>
+    <script src="<%= ResolveUrl("~/js/site.js") %>"></script>
+
+
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="menuPerfil">
+        <div class="offcanvas-header" style="background: #010126; color: white;">
+            <h5 class="offcanvas-title">Perfil</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
+        </div>
+
+        <div class="offcanvas-body">
+
+            <h5 class="fw-bold m-0">
+                <asp:Label ID="lblNomeUsuario" runat="server"></asp:Label>
+            </h5>
+
+            <p class="text-muted" style="margin-top: -5px; font-size: 0.9rem;">
+                <asp:Label ID="lblEmailUsuario" runat="server"></asp:Label>
+            </p>
+
+            <hr>
+
+            <a href="FrmMeusEspacos.aspx" class="d-block mb-2" style="text-decoration: none; color: #180e82;">Meus espaços
+            </a>
+
+            <a href="FrmMinhasReservas.aspx" class="d-block mb-2" style="text-decoration: none; color: #180e82;">Minhas reservas
+            </a>
+
+            <a href="FrmLogin.aspx" class="d-block" style="text-decoration: none; color: #d00000;">Sair
+            </a>
+
+        </div>
+    </div>
+
+
+
+    <asp:ContentPlaceHolder ID="ScriptsContent" runat="server"></asp:ContentPlaceHolder>
+
+</body>
+</html>
