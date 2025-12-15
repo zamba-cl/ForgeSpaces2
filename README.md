@@ -27,11 +27,14 @@ O projeto foi desenvolvido com foco em aprendizado prático de ASP.NET Web Forms
 
 ## Como executar o projeto
 
-1. Clone o repositório.
-2. Abra o projeto no Visual Studio.
-3. Caso o banco esteja com problema, criar nova base de dados e rodar o script "Criacao_Banco.sql"
-4. Configure a string de conexão no `Web.config`.
-5. Execute o projeto com IIS Express.
+1. Clone o repositório;
+2. Abra o projeto no Visual Studio;
+3. Caso o banco esteja com problema:
+    - Criar nova base de dados na pasta `App_Data` chamado `Db_Forge_Spaces.mdf`;
+    - Rodar o script `Criacao_Banco.sql`.
+4. Configure a string de conexão no `Web.config`;
+5. Defina o arquivo `FrmLogin.aspx` dentro da pasta Interface como página inicial
+6. Execute o projeto com IIS Express.
 
 
 ## Autora
