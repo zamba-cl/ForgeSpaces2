@@ -36,11 +36,6 @@
                                     style="border-color: #180e82; color: #180e82;">Adicionar datas disponíveis
                                 </a>
 
-                                <a href='FrmCriarEspaco.aspx?id=<%# Eval("Id_Espaco") %>'
-                                    class="btn btn-outline-primary w-100 mb-2"
-                                    style="border-color: #180e82; color: #180e82;">Editar
-                                </a>
-
                                 <button type="button"
                                     class="btn btn-danger w-100"
                                     onclick="abrirModalExcluir('<%# Eval("Id_Espaco") %>')">

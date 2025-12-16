@@ -24,6 +24,7 @@ namespace ForgeSpaces2.Interface
         {
             int id = int.Parse(hfIdReservaCancelar.Value);
             ReservaTransacao.CancelarReserva(id.ToString());
+            PreencherReservas();
         }
 
         private void PreencherReservas()
@@ -32,6 +33,7 @@ namespace ForgeSpaces2.Interface
             DataTable dttReserva = ReservaTransacao.ObterReservasUsuario(usuario.IdUsuario.ToString());
             rptReservas.DataSource = dttReserva;
             rptReservas.DataBind();
+
         }
     }
 }

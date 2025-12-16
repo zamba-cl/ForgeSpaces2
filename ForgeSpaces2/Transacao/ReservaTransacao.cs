@@ -27,7 +27,7 @@ namespace ForgeSpaces2.Transacao
             AcessarDados dados = new AcessarDados();
 
             string sql = @"SELECT Id_Reserva,
-                            CAST(Data_Reserva AS DATE) AS Data_Reserva
+                            CONVERT(VARCHAR(10), Data_Reserva, 103) AS Data_Reserva
                             FROM Reserva
                             WHERE Status = 0 
                             AND Id_Espaco = @Id_Espaco";
