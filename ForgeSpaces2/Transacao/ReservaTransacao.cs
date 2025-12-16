@@ -26,8 +26,11 @@ namespace ForgeSpaces2.Transacao
             htParametros.Add("@Id_Espaco", idEspaco);
             AcessarDados dados = new AcessarDados();
 
-            string sql = @"SELECT Id_Reserva,Data_Reserva FROM Reserva
-                            WHERE Status = 0 and Id_Espaco = @Id_Espaco";
+            string sql = @"SELECT Id_Reserva,
+                            CAST(Data_Reserva AS DATE) AS Data_Reserva
+                            FROM Reserva
+                            WHERE Status = 0 
+                            AND Id_Espaco = @Id_Espaco";
 
             return dados.ExecutarSelect(sql, htParametros);
 
@@ -45,7 +48,7 @@ namespace ForgeSpaces2.Transacao
         public static void CancelarReserva(string idReserva)
         {
             Hashtable htParametros = new Hashtable();
-            htParametros.Add("@Id_Reserva", idReserva);     
+            htParametros.Add("@Id_Reserva", idReserva);
             AcessarDados dados = new AcessarDados();
             string sql = @"UPDATE Reserva
                             SET Id_Usuario = NULL, Status = 0
